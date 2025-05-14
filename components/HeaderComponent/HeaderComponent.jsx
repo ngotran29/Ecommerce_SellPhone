@@ -7,25 +7,24 @@ import {
   WrapperTextHeaderSmall
 } from "./styled";
 import { UserOutlined, CaretDownOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { Input } from "antd";
+import ButtonInputSearch  from '../ButtonInputSearch/ButtonInputSearch'
 
-const { Search } = Input;
 
 export const HeaderComponent = () => {
   return (
     <div>
       <WrapperHeader>
-        <Col span={6}>
+        <Col span={4}>
           <WrapperTextHeader>SELLPHONE</WrapperTextHeader>
         </Col>
         <Col span={12}>
-          <Search
-            placeholder="Nhập sản phẩm bạn muốn tìm"
-            //onSearch={onSearch}
-            enterButton
-          />
+         <ButtonInputSearch
+         size='middle'
+         placeholder='Nhập từ khóa tìm kiếm vào đây'
+         text='Tìm kiếm'
+         />
         </Col>
-        <Col span={6} style={{display: 'flex'}}>
+        <Col span={8} style={{display: 'flex', gap:'15px'}}>
           <WrapperHeaderAccount>
             <UserOutlined style={{fontSize: '22px'}}/>
             <div>
@@ -37,12 +36,13 @@ export const HeaderComponent = () => {
             </div>
           </WrapperHeaderAccount>
           <div style={{display:'flex', alignItems:'center'}}>
-            <ShoppingCartOutlined style={{fontSize:'22px', color:'#fff'}} />
+            <ShoppingCartOutlined style={{fontSize:'22px', color:'rgb(26, 148, 255)'}} />
             <WrapperTextHeaderSmall>Giỏ hàng</WrapperTextHeaderSmall>
 
           </div>
         </Col>
       </WrapperHeader>
+      <hr />
     </div>
   );
 };
